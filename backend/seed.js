@@ -20,11 +20,15 @@ const importData = async () => {
     const hashedAdminPassword = await bcrypt.hash(adminPassword, salt);
     const hashedUserPassword = await bcrypt.hash(userPassword, salt);
 
+    const now = new Date();
+
     await User.create({
       name: "Admin User",
       email: "admin@shopnest.com",
       password: hashedAdminPassword,
       role: "admin",
+      createdAt: now,
+      updatedAt: now,
     });
 
     await User.create({
@@ -32,6 +36,8 @@ const importData = async () => {
       email: "user@shopnest.com",
       password: hashedUserPassword,
       role: "user",
+      createdAt: now,
+      updatedAt: now,
     });
 
     const products = [
@@ -46,6 +52,8 @@ const importData = async () => {
           "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
         ratings: 4.8,
         numReviews: 24,
+        createdAt: now,
+        updatedAt: now,
       },
       {
         name: "Minimalist Modern Chair",
@@ -58,6 +66,8 @@ const importData = async () => {
           "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
         ratings: 4.2,
         numReviews: 12,
+        createdAt: now,
+        updatedAt: now,
       },
       {
         name: "Professional DSLR Camera",
@@ -70,6 +80,8 @@ const importData = async () => {
           "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
         ratings: 4.9,
         numReviews: 50,
+        createdAt: now,
+        updatedAt: now,
       },
       {
         name: "Classic White Sneakers",
@@ -82,6 +94,8 @@ const importData = async () => {
           "https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
         ratings: 4.5,
         numReviews: 89,
+        createdAt: now,
+        updatedAt: now,
       },
     ];
 

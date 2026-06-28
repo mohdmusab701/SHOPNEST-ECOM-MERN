@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 const connectDB = require('./config/db');
 dotenv.config();
 connectDB();
@@ -16,22 +17,23 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.send('Shopnest Backend is working properly!');
-});
-
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/products', require('./routes/productRoutes.js'));
 app.use('/api/orders', require('./routes/orderRoutes'));
 app.use('/api/payment', require('./routes/paymentRoutes.js'));
 app.use('/api/analytics', require('./routes/analyticsRoutes.js'));
+app.get('/api/health', (req, res) => {
+  res.send('Shopnest Backend is working properly!');
+});
 
 // Serve frontend in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/build')));
+  const frontendBuildPath = path.join(__dirname, '../frontend/build');
+
+  app.use(express.static(frontendBuildPath));
   
   app.use((req, res) => {
-    res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
+    res.sendFile(path.resolve(frontendBuildPath, 'index.html'));
   });
 } else {
   app.get('/', (req, res) => {

@@ -1,25 +1,27 @@
-const nodeMailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
-const sendEmail = async (to, subject, text) => {
-    try {
-        const transporter = nodeMailer.createTransport({
-            service: 'Gmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS
-            }
-        });
+const sendEmail = async ({ email, subject, message, html }) => {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+        throw new Error('Email credentials are not configured');
+    }
 
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to,
-            subject,
-            text
-        };
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
+        }
+    });
 
-        await transporter.sendMail(mailOptions);
-    } catch (error) {
-        console.error('Error sending email:', error);}
+    const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: email,
+        subject,
+        text: message,
+        html: html || message
+    };
+
+    return transporter.sendMail(mailOptions);
 };
 
 module.exports = sendEmail;
