@@ -57,8 +57,7 @@ const About = () => {
           margin: "0 auto 30px auto",
         }}
       >
-        <strong>Join the community and grow together!</strong> Welcome to my
-        platform where we build, deploy, and scale highly engineered systems.
+        <strong>Join the community and grow together!</strong> I'm Mohd Musab, a Full-Stack MERN Developer who loves building fast, secure, and scalable web applications, solving real-world problems, and continuously learning new technologies.
       </p>
 
       <div
