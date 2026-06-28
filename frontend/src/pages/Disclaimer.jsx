@@ -14,31 +14,78 @@ const textualStyle = {
 const Disclaimer = () => {
   return (
     <div style={textualStyle}>
-      <h2 style={{ color: '#fff', marginBottom: '20px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '15px' }}>
-        Legal & Site Disclaimer
+      <h2
+        style={{
+          color: '#fff',
+          marginBottom: '20px',
+          borderBottom: '1px solid rgba(255,255,255,0.1)',
+          paddingBottom: '15px'
+        }}
+      >
+        Disclaimer
       </h2>
-      
+
       <p style={{ marginBottom: '20px' }}>
-        The data, interfaces, and graphical components represented across the ShopNest domain strictly act uniquely as an educational development platform. This codebase models rigorous application structures and architectures for purely demonstrative, portfolio-oriented engineering usage.
+        ShopNest is a demonstration e-commerce application developed for
+        educational, learning, and portfolio purposes. It showcases modern
+        full-stack web development using the MERN stack and should not be
+        considered a commercial online store.
       </p>
 
-      <h4 style={{ color: '#f97316', marginTop: '25px', marginBottom: '10px' }}>1. Accuracy of Materials</h4>
+      <h4 style={{ color: '#f97316', marginTop: '25px', marginBottom: '10px' }}>
+        1. Product Information
+      </h4>
       <p style={{ marginBottom: '15px' }}>
-        The materials spanning the ShopNest interface may heavily include dynamic technical, typographical, or dummy photographic elements. Product matrices mapped in the DB pipeline do absolutely not correlate to strictly real physical outputs and are safely populated via generic Unsplash imagery protocols.
+        Product names, descriptions, prices, and images displayed on this
+        website are for demonstration purposes only. Some images may be sourced
+        from publicly available image providers or used as placeholders.
       </p>
 
-      <h4 style={{ color: '#f97316', marginTop: '25px', marginBottom: '10px' }}>2. Payment Processing Restrictions</h4>
+      <h4 style={{ color: '#f97316', marginTop: '25px', marginBottom: '10px' }}>
+        2. Payments
+      </h4>
       <p style={{ marginBottom: '15px' }}>
-        No authentic financial variables are handled natively within this environment. All payment endpoints forcefully bind exclusively to external testing-based networks (Sandbox Razorpay environments). No exact deductibles exist.
+        Any payment functionality is integrated only for testing and development
+        purposes using Razorpay Sandbox. No real financial transactions or
+        charges are processed through this demo application.
       </p>
 
-      <h4 style={{ color: '#f97316', marginTop: '25px', marginBottom: '10px' }}>3. External Binding Links</h4>
+      <h4 style={{ color: '#f97316', marginTop: '25px', marginBottom: '10px' }}>
+        3. User Accounts
+      </h4>
       <p style={{ marginBottom: '15px' }}>
-        ShopNest operates completely independent domains and takes strictly zero absolute parameter responsibility over the specific contents or behaviors populated via external routing anchors generated implicitly by third-party configurations. 
+        Users are advised not to register using sensitive personal information.
+        Any data entered into this demo application is intended solely for
+        testing and learning purposes.
       </p>
 
-      <p style={{ marginTop: '30px', fontStyle: 'italic', fontSize: '0.9rem' }}>
-        By interacting natively within this codebase, you unconditionally signal acceptance bounded by these parameters efficiently.
+      <h4 style={{ color: '#f97316', marginTop: '25px', marginBottom: '10px' }}>
+        4. Availability
+      </h4>
+      <p style={{ marginBottom: '15px' }}>
+        The application may be updated, modified, or taken offline at any time
+        without prior notice as part of ongoing development and maintenance.
+      </p>
+
+      <h4 style={{ color: '#f97316', marginTop: '25px', marginBottom: '10px' }}>
+        5. Third-Party Services
+      </h4>
+      <p style={{ marginBottom: '15px' }}>
+        ShopNest may integrate third-party services such as Razorpay, Cloudinary,
+        or external APIs. Their respective terms and privacy policies apply to
+        the use of those services.
+      </p>
+
+      <p
+        style={{
+          marginTop: '30px',
+          fontStyle: 'italic',
+          fontSize: '0.9rem'
+        }}
+      >
+        By using ShopNest, you acknowledge that this website is a demo project
+        created for educational and portfolio purposes and agree to use it
+        accordingly.
       </p>
     </div>
   );
